@@ -18,6 +18,16 @@ class Posts
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Comentarios", inversedBy="posts")
+     */
+    private $comentarios;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="posts")
+     */
+    private $user;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $titulo;

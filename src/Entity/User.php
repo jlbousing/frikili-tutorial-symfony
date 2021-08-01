@@ -12,12 +12,31 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+
+
+
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Comentarios", inversedBy="user")
+     */
+    private $comentarios;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Posts", inversedBy="user")
+     */
+    private $posts;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Profesion", inversedBy="user")
+     */
+    private $profesion;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
