@@ -24,17 +24,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Comentarios", inversedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Comentarios", mappedBy="user")
      */
     private $comentarios;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Posts", inversedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Posts", mappedBy="user")
      */
     private $posts;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Profesion", inversedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Profesion", mappedBy="user")
      */
     private $profesion;
 

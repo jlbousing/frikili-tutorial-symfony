@@ -18,7 +18,7 @@ class Posts
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Comentarios", inversedBy="posts")
+     * @ORM\OneToMany(targetEntity="App\Entity\Comentarios", mappedBy="posts")
      */
     private $comentarios;
 
